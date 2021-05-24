@@ -1,0 +1,1 @@
+Part of the Odin project, tests the knowledge of Javascript Module patterns and use of factory functions. 
