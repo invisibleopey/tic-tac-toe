@@ -1,0 +1,37 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    background-color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+#container {
+    max-width: 20rem;
+    margin: 0px auto;
+}
+#board {
+    border: 2px solid black;
+    max-width: 16rem;
+    min-height: 25rem;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    font-size: 5rem;
+}
+#board > * {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#restart {
+    margin-top: 2em;
+    padding: 10px;
+    background-color: aquamarine;
+    border: none;
+}
+#restart:hover {
+    background: hsl(160, 100%, 85%);
+}
