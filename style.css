@@ -25,6 +25,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1em;
+    background: hsl(60, 68%, 94%);
+}
+#board > *:hover {
+    background: hsl(60, 68%, 100%);
+    cursor: pointer;
 }
 #restart {
     margin-top: 2em;
