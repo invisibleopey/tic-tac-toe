@@ -27,7 +27,7 @@ const myModule = (function () {
     buttons.forEach(button => button.addEventListener("click", gameFlow));
 
     function gameFlow(e) {
-        if (round === 9) {
+        if (round === 9 ) {
             resultBoard.textContent = "Draw! Restart Game"
         }
         if (gameOver) return
@@ -78,7 +78,7 @@ const myModule = (function () {
                     };
         if ((buttons[0].textContent !== "") && (buttons[0].textContent === 
                 buttons[3].textContent) && buttons[3].textContent === 
-                    buttons[8].textContent) {
+                    buttons[6].textContent) {
                         gotWinner(buttons[0]);
                     };
         if ((buttons[1].textContent !== "") && (buttons[1].textContent === 
