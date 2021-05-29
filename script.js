@@ -23,8 +23,10 @@ const myModule = (function () {
     const doc = document;
     const buttons = doc.querySelectorAll("#board button");
     const resultBoard = doc.querySelector("#result-board");
+    const restartbutton = doc.querySelector("#restart");
 
     buttons.forEach(button => button.addEventListener("click", gameFlow));
+    restartbutton.addEventListener("click", restartGame);
 
     function gameFlow(e) {
         if (round === 9 ) {
@@ -34,9 +36,11 @@ const myModule = (function () {
         if (gameboard[e.target.dataset.index] !== "") return;
         if (turn) {
             player1.playerMove(e);
+            resultBoard.textContent = "Player Two's turn";
             turn = false;
         } else {
             player2.playerMove(e);
+            resultBoard.textContent = "Player One's turn";
             turn = true;
         }
         round++
@@ -101,6 +105,16 @@ const myModule = (function () {
                     buttons[6].textContent) {
                         gotWinner(buttons[2]);
                     };
+    }
+    function restartGame() {
+        turn = true;
+        round = 1;
+        gameOver = false;
+        for (let i = 0; i < gameboard.length; i++){
+            gameboard[i] = "";
+        }
+        displayController();
+        resultBoard.textContent = "Player One's turn";
     }
     displayController();
 })();
