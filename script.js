@@ -36,11 +36,9 @@ const myModule = (function () {
         if (gameboard[e.target.dataset.index] !== "") return;
         if (turn) {
             player1.playerMove(e);
-            resultBoard.textContent = "Player Two's turn";
             turn = false;
         } else {
             player2.playerMove(e);
-            resultBoard.textContent = "Player One's turn";
             turn = true;
         }
         round++
@@ -60,6 +58,7 @@ const myModule = (function () {
             resultBoard.textContent = `${player2.name} won!`
         }
         gameOver = true;
+        round = 1;
     }
     function getWinner() {
         // let btn1 = buttons[0], btn2 = buttons[1], btn3 = buttons[2], btn4 = buttons[3];
@@ -114,7 +113,7 @@ const myModule = (function () {
             gameboard[i] = "";
         }
         displayController();
-        resultBoard.textContent = "Player One's turn";
+        resultBoard.textContent = "";
     }
     displayController();
 })();
