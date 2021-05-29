@@ -10,6 +10,10 @@ body {
     max-width: 20rem;
     margin: 0px auto;
 }
+h2 {
+    display: inline-block;
+    min-height: 1em;
+}
 #board {
     border: 2px solid black;
     max-width: 16rem;
