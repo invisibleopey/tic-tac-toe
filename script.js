@@ -1,4 +1,4 @@
-// Remains 5, 6 and 7
+// Remains 6 and 7
 const myModule = (function () {
     // Player Factory function
     const player = function (name, selector) {
@@ -13,8 +13,7 @@ const myModule = (function () {
 }
     const gameboard = ["","","","","","","","",""]
     // Player1 and Player2 with selectors
-    const player1 = player("Opey", "X");
-    const player2 = player("Yemi", "O");
+    let player1, player2;
     let turn = true;
     let round = 1;
     let gameOver = false;
@@ -24,9 +23,11 @@ const myModule = (function () {
     const buttons = doc.querySelectorAll("#board button");
     const resultBoard = doc.querySelector("#result-board");
     const restartbutton = doc.querySelector("#restart");
+    const form = doc.querySelector("#form");
 
     buttons.forEach(button => button.addEventListener("click", gameFlow));
     restartbutton.addEventListener("click", restartGame);
+    form.addEventListener("submit", submitNames);
 
     function gameFlow(e) {
         if (round === 9 ) {
@@ -52,18 +53,15 @@ const myModule = (function () {
     }
     function gotWinner(winnerBtn) {
         if (winnerBtn.textContent === "X") {
-            resultBoard.textContent = `${player1.name} won!`
+            resultBoard.textContent = `Congratulation ${player1.name}, you won!`
         }
         if (winnerBtn.textContent === "O") {
-            resultBoard.textContent = `${player2.name} won!`
+            resultBoard.textContent = `Congratulation ${player2.name}, you won!`
         }
         gameOver = true;
         round = 1;
     }
     function getWinner() {
-        // let btn1 = buttons[0], btn2 = buttons[1], btn3 = buttons[2], btn4 = buttons[3];
-        // let btn5 = buttons[4], btn6 = buttons[5], btn7 = buttons[6], btn8 = buttons[7];
-        // let btn9 = buttons[8];
         if ((buttons[0].textContent !== "") && (buttons[0].textContent === 
                 buttons[1].textContent) && buttons[1].textContent === 
                     buttons[2].textContent) {
@@ -114,6 +112,16 @@ const myModule = (function () {
         }
         displayController();
         resultBoard.textContent = "";
+        form.classList.toggle("toggleForm");
+        player1 = undefined;
+        player2 = undefined;
+    }
+    function submitNames(e) {
+        e.preventDefault();
+        player1 = player(doc.querySelector("#player1").value, "X");
+        player2 = player(doc.querySelector("#player2").value, "O");
+        form.classList.toggle("toggleForm");
+        form.reset();
     }
     displayController();
 })();
