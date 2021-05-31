@@ -37,12 +37,12 @@ input[type="submit"] {
 }
 #board {
     border: 2px solid black;
-    max-width: 214px;
-    min-height: 214px;
+    width: 214px;
+    height: 214px;
     margin: 0px auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
     font-size: 5rem;
 }
 #board > * {
