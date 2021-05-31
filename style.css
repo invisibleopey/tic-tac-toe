@@ -37,8 +37,8 @@ input[type="submit"] {
 }
 #board {
     border: 2px solid black;
-    max-width: 16rem;
-    min-height: 25rem;
+    max-width: 214px;
+    min-height: 214px;
     margin: 0px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -50,7 +50,7 @@ input[type="submit"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1em;
+    font-size: 0.5em;
     background: hsl(60, 68%, 94%);
 }
 #board > *:hover {
