@@ -2,13 +2,13 @@
 const myModule = (function () {
     // Player Factory function
     const player = function (name, selector) {
-    name = name;
-    selector = selector;
-    playerMove = function (e) {
-        gameboard[e.target.dataset.index] = selector;
-    }
-    return {
-        name, selector, playerMove
+        name = name;
+        selector = selector;
+        playerMove = function (e) {
+            gameboard[e.target.dataset.index] = selector;
+        }
+        return {
+            name, selector, playerMove
     }
 }
     const gameboard = ["","","","","","","","",""]
@@ -51,6 +51,7 @@ const myModule = (function () {
             button.textContent = gameboard[button.dataset.index];
         })
     }
+    // Action after winner has been determined
     function gotWinner(winnerBtn) {
         if (winnerBtn.textContent === "X") {
             resultBoard.textContent = `Congratulation ${player1.name}, you won!`
@@ -61,6 +62,7 @@ const myModule = (function () {
         gameOver = true;
         round = 1;
     }
+    // Logic to determine winner
     function getWinner() {
         if ((buttons[0].textContent !== "") && (buttons[0].textContent === 
                 buttons[1].textContent) && buttons[1].textContent === 
