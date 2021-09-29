@@ -1,68 +1,71 @@
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 body {
-    background-color: aliceblue;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
+  background-color: aliceblue;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+    Verdana, sans-serif;
+  text-align: center;
 }
 #container {
-    max-width: 20rem;
-    margin: 0px auto;
+  max-width: 20rem;
+  margin: 0px auto;
 }
 header {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 h2 {
-    margin-top: 0;
-    display: inline-block;
-    min-height: 1em;
+  margin-top: 0;
+  display: inline-block;
+  min-height: 1em;
 }
 form {
-    margin-bottom: 1em;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 5px;
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
 }
 form > * {
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
 }
-input[type="submit"] {
-    background:hsl(160, 100%, 85%);
+input[type='submit'] {
+  background: hsl(160, 100%, 85%);
 }
 .toggleForm {
-    display: none;
+  display: none;
 }
 #board {
-    border: 2px solid black;
-    width: 214px;
-    height: 214px;
-    margin: 0px auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    font-size: 5rem;
+  border: 2px solid black;
+  width: 214px;
+  height: 214px;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  font-size: 5rem;
 }
 #board > * {
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.5em;
-    background: hsl(60, 68%, 94%);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5em;
+  background: hsl(60, 68%, 94%);
 }
 #board > *:hover {
-    background: hsl(60, 68%, 100%);
-    cursor: pointer;
+  background: hsl(60, 68%, 100%);
+  cursor: pointer;
 }
 #restart {
-    margin-top: 2em;
-    padding: 10px;
-    background-color: aquamarine;
-    border: none;
+  margin-top: 2em;
+  padding: 10px;
+  background-color: aquamarine;
+  border: none;
 }
 #restart:hover {
-    background: hsl(160, 100%, 85%);
+  background: hsl(160, 100%, 85%);
 }
